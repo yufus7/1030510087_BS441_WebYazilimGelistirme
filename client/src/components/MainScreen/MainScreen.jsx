@@ -5,9 +5,7 @@ function MainScreen() {
     return (
         <div className="main-screen">
             <div className="logo">
-                <span style={{ fontSize: '5rem', color: 'var(--red)' }}>taş</span>
-                <span style={{ fontSize: '5rem', color: 'var(--yellow)' }}>kağıt</span>
-                <span style={{ fontSize: '5rem', color: 'var(--blue)' }}>makas</span>
+                <span style={{ fontSize: '5rem', color: 'white' }}>taşkağıtmakas</span>
             </div>
             <div className="m-buttons">
                 <button className="mb-start">start</button>

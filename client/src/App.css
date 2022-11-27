@@ -13,13 +13,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--black);
   height: 100vh;
-  background: linear-gradient(45deg, #837874, #ad7f91, #79c2dd, #99d4c7);
-	background-size: 500% 500%;
-	animation: animeBG 15s ease infinite;
-	animation-direction: alternate;
-  font-family: 'Zilla Slab', serif;
+  /* background: linear-gradient(45deg, #837874, #ad7f91, #79c2dd, #99d4c7); */
+  background: var(--black);
 }
 
 .app-glass{
