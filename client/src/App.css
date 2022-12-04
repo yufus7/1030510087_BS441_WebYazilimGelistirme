@@ -9,17 +9,22 @@
   --glass: rgba(255, 255, 255, 0.54);
 }
 
+a {
+  text-decoration: none;
+}
+
 .app{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* background: linear-gradient(45deg, #837874, #ad7f91, #79c2dd, #99d4c7); */
   background: var(--black);
 }
 
-.app-glass{
+.glass{
   display: grid;
+  justify-content: center;
+  align-items: center;
   height: 97%;
   width: 97%;
   background: rgba(0, 0, 0, 0.38);
@@ -29,19 +34,19 @@
   -webkit-backdrop-filter: blur(5px);
 }
 
-.app-glass::-webkit-scrollbar{
+.glass::-webkit-scrollbar{
   display: none; 
 }
 
 
 @media screen and (max-width:1200px) {
-  .app-glass{
+  .glass{
     grid-template-columns: 5rem auto 3rem;
   }
 }
 
 @media screen and (max-width:768px) {
-  .app-glass{
+  .glass{
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -49,7 +54,3 @@
   } 
 }
 
-@keyframes animeBG {
-  0% {background-position: 0%}
-  100% {background-position: 100%}
-}

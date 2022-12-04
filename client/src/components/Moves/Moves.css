@@ -1,0 +1,26 @@
+.moves-main{
+    display: flex;
+    height: 150px;
+    gap: 1.5vh;
+}
+
+.box{
+    background: var(--glass);
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    transition: 0.3s;
+}
+
+.box:hover{
+    transform: translateY(5px);
+}
+
+.obj{
+    height: 100%;
+    width: 100%;
+}
+
+.img{
+    object-fit: contain;
+}

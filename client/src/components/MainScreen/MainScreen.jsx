@@ -1,6 +1,8 @@
 import React from 'react'
 import './MainScreen.css'
 
+import { Link } from "react-router-dom";
+
 function MainScreen() {
     return (
         <div className="main-screen">
@@ -8,8 +10,15 @@ function MainScreen() {
                 <span style={{ fontSize: '5rem', color: 'white' }}>taşkağıtmakas</span>
             </div>
             <div className="m-buttons">
-                <button className="mb-start">start</button>
-                <button className="mb-change-g-mode">chaneg game mode</button>
+                <Link to="/modeone">
+                    <button className="mb-start">
+                        Mode One
+                    </button>
+                </Link>
+
+                <Link to="/modetwo">
+                    <button className="mb-change-g-mode">Mode Two</button>
+                </Link>
             </div>
         </div>
     )
