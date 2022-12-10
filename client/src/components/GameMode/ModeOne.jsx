@@ -1,16 +1,13 @@
 import React from 'react'
 import './ModeOne.css'
-import Moves from '../Moves/Moves'
+import Game from '../Game/Game'
 
 function ModeOne() {
     return (
         <div className='mode-one'>
-            <div>scorlar</div>
-            <div>oyun ekranı</div>
-            <div className='one-moves'>
-                <Moves />
+            <div>
+                <Game />
             </div>
-
         </div>
     )
 }
