@@ -37,10 +37,10 @@ function Scoreboard(props) {
     return (
         <div className="scoreboard">
             <div className="computer-score">
-                <h1 style={{ color: "white" }}>COMPUTER: {computerScore}</h1>
+                <h1 style={{ color: "var(--yellow)" }}>COMPUTER: {computerScore}</h1>
             </div>
             <div className="player-score">
-                <h1 style={{ color: "white" }}>PLAYER: {playerScore}</h1>
+                <h1 style={{ color: "var(--yellow)" }}>PLAYER: {playerScore}</h1>
             </div>
         </div>
     )
