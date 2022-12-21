@@ -1,9 +1,7 @@
 .game{
     display: flex;
     width: 97vw;
-    height: 500px;
     gap: 2rem;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -12,6 +10,13 @@
     display: flex;
     width: 100%;
     justify-content: space-evenly;
+}
+
+.game-finish{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 97vw;
 }
 
 .scoreboard{

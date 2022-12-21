@@ -1,11 +1,11 @@
 import React from 'react'
 import '../App.css';
-import ModeTwo from '../components/GameMode/ModeTwo'
+import Game from '../components/Game/Game';
 
 function GameModeTwo() {
     return (
         <div className="glass">
-            <ModeTwo />
+            <Game />
         </div>
     )
 }
