@@ -10,13 +10,13 @@ function MainScreen() {
                 <span style={{ fontSize: '5rem', color: 'white' }}>taşkağıtmakas</span>
             </div>
             <div className="m-buttons">
-                <Link to="/modeone">
+                <Link to="/mode-one">
                     <button className="mb-start">
                         Mode One
                     </button>
                 </Link>
 
-                <Link to="/modetwo">
+                <Link to="/mode-two">
                     <button className="mb-change-g-mode">Mode Two</button>
                 </Link>
             </div>

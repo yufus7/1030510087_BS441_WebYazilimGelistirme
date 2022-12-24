@@ -1,14 +1,44 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Scoreboard.css'
 
 function Scoreboard(props) {
+
+    useEffect(() => {
+        if (props.computer === 0) {
+            if (props.player === "makas") {
+                props.setComputerScore(props.computerScore + 1)
+            }
+            else if (props.player === "kagit") {
+                props.setPlayerScore(props.playerScore + 1)
+            }
+        }
+        else if (props.computer === 1) {
+            if (props.player === "tas") {
+                props.setComputerScore(props.computerScore + 1)
+            }
+            else if (props.player === "makas") {
+                props.setPlayerScore(props.playerScore + 1)
+            }
+        }
+        else if (props.computer === 2) {
+            if (props.player === "kagit") {
+                props.setComputerScore(props.computerScore + 1)
+            }
+            else if (props.player === "tas") {
+                props.setPlayerScore(props.playerScore + 1)
+            }
+        }
+
+
+    }, [props.click]);
+
     return (
         <div className="scoreboard">
             <div className="computer-score">
-                <h1 style={{ color: "var(--yellow)" }}>COMPUTER: {props.computer}</h1>
+                <h1 style={{ color: "white" }}>COMPUTER: {props.computerScore}</h1>
             </div>
             <div className="player-score">
-                <h1 style={{ color: "var(--yellow)" }}>PLAYER: {props.player}</h1>
+                <h1 style={{ color: "white" }}>PLAYER: {props.playerScore}</h1>
             </div>
         </div>
     )

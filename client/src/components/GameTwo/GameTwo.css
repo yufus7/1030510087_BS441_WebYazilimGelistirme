@@ -1,0 +1,74 @@
+.game-two{
+    display: flex;
+    width: 97vw;
+    gap: 2rem;
+    align-items: center;
+    flex-direction: column;
+}
+
+.point-bar{
+    display: flex;
+    gap: 3rem;
+}
+
+.game-two-main{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.game-two-img{
+    width: 300px;
+}
+
+
+.game-two-fight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+}
+
+
+.game-two-moves{
+    display: flex;
+    width: 100%;
+    height: 160px;
+    gap: 1.5vh;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.game-two-computer{
+    color: red;
+}
+
+
+.game-two-player{
+    color: green;
+}
+
+
+.selection-box{
+    background: var(--yellow);
+    border-radius: 50%;
+    border: 0.15rem solid black;
+    height: 150px;
+    width: 150px;
+    transition: 0.3s;
+}
+
+.selection-box:hover{
+    background: white;
+    transform: translateY(5px);
+}
+
+.obj{
+    height: 100%;
+    width: 100%;
+}
+
+.img{
+    object-fit: contain;
+}
