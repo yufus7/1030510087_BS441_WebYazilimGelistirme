@@ -13,12 +13,18 @@
 
 .game-two-main{
     display: flex;
-    width: 100%;
     justify-content: center;
+    width: 100%;
+    height: 350px;
 }
 
 .game-two-img{
     width: 300px;
+}
+
+.game-two-img-ok{
+    width: 300px;
+    border-bottom: 0.7rem solid var(--green);
 }
 
 

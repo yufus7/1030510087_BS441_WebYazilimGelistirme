@@ -20,11 +20,29 @@ function GameTwo() {
         if (computer === 0) {
             if (player === "makas") {
                 setWho("computer")
-                setPlayerScore(playerScore - point)
+                if (point === 13) {
+                    if (computerScore <= 90) {
+                        setComputerScore(computerScore + 10)
+                    } else {
+                        setComputerScore(100)
+                    }
+                }
+                else {
+                    setPlayerScore(playerScore - point)
+                }
             }
             else if (player === "kagit") {
                 setWho("player")
-                setComputerScore(computerScore - point)
+                if (point === 13) {
+                    if (playerScore <= 90) {
+                        setPlayerScore(playerScore + 10)
+                    } else {
+                        setPlayerScore(100)
+                    }
+
+                } else {
+                    setComputerScore(computerScore - point)
+                }
             }
             else {
                 setWho("scoreless")
@@ -33,11 +51,29 @@ function GameTwo() {
         else if (computer === 1) {
             if (player === "tas") {
                 setWho("computer")
-                setPlayerScore(playerScore - point)
+                if (point === 13) {
+                    if (computerScore <= 90) {
+                        setComputerScore(computerScore + 10)
+                    } else {
+                        setComputerScore(100)
+                    }
+                }
+                else {
+                    setPlayerScore(playerScore - point)
+                }
             }
             else if (player === "makas") {
                 setWho("player")
-                setComputerScore(computerScore - point)
+                if (point === 13) {
+                    if (playerScore <= 90) {
+                        setPlayerScore(playerScore + 10)
+                    } else {
+                        setPlayerScore(100)
+                    }
+
+                } else {
+                    setComputerScore(computerScore - point)
+                }
             }
             else {
                 setWho("scoreless")
@@ -46,11 +82,29 @@ function GameTwo() {
         else if (computer === 2) {
             if (player === "kagit") {
                 setWho("computer")
-                setPlayerScore(playerScore - point)
+                if (point === 13) {
+                    if (computerScore <= 90) {
+                        setComputerScore(computerScore + 10)
+                    } else {
+                        setComputerScore(100)
+                    }
+                }
+                else {
+                    setPlayerScore(playerScore - point)
+                }
             }
             else if (player === "tas") {
                 setWho("player")
-                setComputerScore(computerScore - point)
+                if (point === 13) {
+                    if (playerScore <= 90) {
+                        setPlayerScore(playerScore + 10)
+                    } else {
+                        setPlayerScore(100)
+                    }
+
+                } else {
+                    setComputerScore(computerScore - point)
+                }
             }
             else {
                 setWho("scoreless")
@@ -63,63 +117,67 @@ function GameTwo() {
 
     return (
         <div >
-            {(computerScore <= 0 || playerScore <= 0) ?
-                <div><h1>oyun bitti</h1></div>
-                : <div className='game-two'>
-                    <div className='point-bar'>
-                        <h1 style={{ color: "white" }}>{computerScore}</h1>
-                        <h1 style={{ color: "white" }}>{playerScore}</h1>
+            {
+                (computerScore <= 0 || playerScore <= 0) ?
+                    <div><h1>oyun bitti</h1></div>
+                    : <div className='game-two'>
+                        <div className='point-bar'>
+                            <h1 style={{ color: "white" }}>{computerScore}</h1>
+                            <h1 style={{ color: "white" }}>{playerScore}</h1>
+                        </div>
+                        <div className='game-two-main'>
+                            <div>
+                                <img className={who === "computer" ? "game-two-img-ok" : "game-two-img"} src={selectComputer} alt="" />
+                            </div>
+                            <div className='game-two-fight'>
+                                {(who === "scoreless")
+                                    ? <div>
+                                        <h1 style={{ color: "white" }}>berabere</h1>
+                                    </div>
+                                    : (point === 8
+                                        ? (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"}>{point} zayıf vuruş</h1>)
+                                        : (point === 12
+                                            ? (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point} güçlü vuruş</h1>)
+                                            : (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point}</h1>)))}
+                            </div>
+                            <div>
+                                <img className={who === "player" ? "game-two-img-ok" : "game-two-img"} src={selectPlayer} alt="" />
+                            </div>
+                        </div >
+
+                        {/* oyun ekranı */}
+                        <div className='game-two-moves'>
+                            <div className='selection-box' onClick={() => {
+                                setSelectPlayer(tas);
+                                setPlayer("tas");
+                                setSelectComputer(rnd(setComputer))
+                                setPoint(rndPoint())
+                                setClick(!click)
+                            }}
+                            >
+                                <img className='obj img' src={tas} alt="" />
+                            </div>
+                            <div className='selection-box' onClick={() => {
+                                setSelectPlayer(kagit);
+                                setPlayer("kagit");
+                                setSelectComputer(rnd(setComputer))
+                                setPoint(rndPoint())
+                                setClick(!click)
+                            }}>
+                                <img className='obj img' src={kagit} alt="" />
+                            </div>
+                            <div className='selection-box' onClick={() => {
+                                setSelectPlayer(makas);
+                                setPlayer("makas");
+                                setSelectComputer(rnd(setComputer))
+                                setPoint(rndPoint())
+                                setClick(!click)
+                            }}>
+                                <img className='obj img' src={makas} alt="" />
+                            </div>
+                        </div>
                     </div>
-                    <div className='game-two-main'>
-                        <div>
-                            <img className='game-two-img' src={selectComputer} alt="" />
-                        </div>
-                        <div className='game-two-fight'>
-                            {who === "scoreless"
-                                ? <div>
-                                    <h1 style={{ color: "white" }}>berabere</h1>
-                                </div>
-                                : (point === 8
-                                    ? (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"}>{point} zayıf vuruş</h1>)
-                                    : (point === 12
-                                        ? (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point} güçlü vuruş</h1>)
-                                        : (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point}</h1>)))}
-                        </div>
-                        <div>
-                            <img className='game-two-img' src={selectPlayer} alt="" />
-                        </div>
-                    </div >
-                    <div className='game-two-moves'>
-                        <div className='selection-box' onClick={() => {
-                            setSelectPlayer(tas);
-                            setPlayer("tas");
-                            setSelectComputer(rnd(setComputer))
-                            setPoint(rndPoint())
-                            setClick(!click)
-                        }}
-                        >
-                            <img className='obj img' src={tas} alt="" />
-                        </div>
-                        <div className='selection-box' onClick={() => {
-                            setSelectPlayer(kagit);
-                            setPlayer("kagit");
-                            setSelectComputer(rnd(setComputer))
-                            setPoint(rndPoint())
-                            setClick(!click)
-                        }}>
-                            <img className='obj img' src={kagit} alt="" />
-                        </div>
-                        <div className='selection-box' onClick={() => {
-                            setSelectPlayer(makas);
-                            setPlayer("makas");
-                            setSelectComputer(rnd(setComputer))
-                            setPoint(rndPoint())
-                            setClick(!click)
-                        }}>
-                            <img className='obj img' src={makas} alt="" />
-                        </div>
-                    </div>
-                </div>}
+            }
         </div >
     )
 }
@@ -132,7 +190,7 @@ function rnd(setComputer) {
 }
 
 function rndPoint() {
-    return Math.round(Math.random() * (12 - 8) + 8);
+    return Math.round(Math.random() * (13 - 8) + 8);
 }
 
 export default GameTwo
