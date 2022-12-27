@@ -11,13 +11,13 @@ function MainScreen() {
             </div>
             <div className="m-buttons">
                 <Link to="/mode-one">
-                    <button className="mb-start">
+                    <button className="mb-one">
                         Mode One
                     </button>
                 </Link>
 
                 <Link to="/mode-two">
-                    <button className="mb-change-g-mode">Mode Two</button>
+                    <button className="mb-two">Mode Two</button>
                 </Link>
             </div>
         </div>

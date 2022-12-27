@@ -5,6 +5,8 @@ import tas from "../../img/tas.png"
 import kagit from "../../img/kagit.png"
 import makas from "../../img/makas.png"
 
+import FinishTwo from '../Finish/FinishTwo'
+
 function GameTwo() {
     const [click, setClick] = useState(false)
     const [selectPlayer, setSelectPlayer] = useState(tas);
@@ -119,11 +121,18 @@ function GameTwo() {
         <div >
             {
                 (computerScore <= 0 || playerScore <= 0) ?
-                    <div><h1>oyun bitti</h1></div>
+                    <div>
+                        <div className='point-bar'>
+                            <h1 style={{ color: "white" }}>COMPUTER: {computerScore < 0 ? 0 : computerScore}</h1>
+                            <h1 style={{ color: "white" }}>PLAYER: {playerScore < 0 ? 0 : playerScore}</h1>
+                        </div>
+                        <FinishTwo winner={computerScore <= 0 ? "Player" : "Computer"} />
+
+                    </div>
                     : <div className='game-two'>
                         <div className='point-bar'>
-                            <h1 style={{ color: "white" }}>{computerScore}</h1>
-                            <h1 style={{ color: "white" }}>{playerScore}</h1>
+                            <h1 style={{ color: "white" }}>COMPUTER: {computerScore}</h1>
+                            <h1 style={{ color: "white" }}>PLAYER: {playerScore}</h1>
                         </div>
                         <div className='game-two-main'>
                             <div>
@@ -131,13 +140,15 @@ function GameTwo() {
                             </div>
                             <div className='game-two-fight'>
                                 {(who === "scoreless")
-                                    ? <div>
-                                        <h1 style={{ color: "white" }}>berabere</h1>
-                                    </div>
+                                    ? (computerScore !== 100
+                                        ? <div>
+                                            <h1 style={{ color: "white" }}>DRAW!</h1>
+                                        </div>
+                                        : <div></div>)
                                     : (point === 8
-                                        ? (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"}>{point} zayıf vuruş</h1>)
+                                        ? (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"}>{point} <span>LOW DAMAGE!</span></h1>)
                                         : (point === 12
-                                            ? (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point} güçlü vuruş</h1>)
+                                            ? (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point} <span>HIGH DAMAGE!</span></h1>)
                                             : (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point}</h1>)))}
                             </div>
                             <div>

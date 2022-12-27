@@ -23,8 +23,6 @@ a {
 
 .glass{
   display: grid;
-  justify-content: center;
-  align-items: center;
   height: 97%;
   width: 97%;
   background: rgba(0, 0, 0, 0.38);
