@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './GameTwo.css'
 
 import tas from "../../img/tas.png"
@@ -6,6 +6,7 @@ import kagit from "../../img/kagit.png"
 import makas from "../../img/makas.png"
 
 import FinishTwo from '../Finish/FinishTwo'
+import ScoreboardTwo from '../Scoreboard/ScoreboardTwo'
 
 function GameTwo() {
     const [click, setClick] = useState(false)
@@ -16,124 +17,38 @@ function GameTwo() {
     const [playerScore, setPlayerScore] = useState(100);
     const [computerScore, setComputerScore] = useState(100);
     const [point, setPoint] = useState(0);
-    const [who, setWho] = useState("")
-
-    useEffect(() => {
-        if (computer === 0) {
-            if (player === "makas") {
-                setWho("computer")
-                if (point === 13) {
-                    if (computerScore <= 90) {
-                        setComputerScore(computerScore + 10)
-                    } else {
-                        setComputerScore(100)
-                    }
-                }
-                else {
-                    setPlayerScore(playerScore - point)
-                }
-            }
-            else if (player === "kagit") {
-                setWho("player")
-                if (point === 13) {
-                    if (playerScore <= 90) {
-                        setPlayerScore(playerScore + 10)
-                    } else {
-                        setPlayerScore(100)
-                    }
-
-                } else {
-                    setComputerScore(computerScore - point)
-                }
-            }
-            else {
-                setWho("scoreless")
-            }
-        }
-        else if (computer === 1) {
-            if (player === "tas") {
-                setWho("computer")
-                if (point === 13) {
-                    if (computerScore <= 90) {
-                        setComputerScore(computerScore + 10)
-                    } else {
-                        setComputerScore(100)
-                    }
-                }
-                else {
-                    setPlayerScore(playerScore - point)
-                }
-            }
-            else if (player === "makas") {
-                setWho("player")
-                if (point === 13) {
-                    if (playerScore <= 90) {
-                        setPlayerScore(playerScore + 10)
-                    } else {
-                        setPlayerScore(100)
-                    }
-
-                } else {
-                    setComputerScore(computerScore - point)
-                }
-            }
-            else {
-                setWho("scoreless")
-            }
-        }
-        else if (computer === 2) {
-            if (player === "kagit") {
-                setWho("computer")
-                if (point === 13) {
-                    if (computerScore <= 90) {
-                        setComputerScore(computerScore + 10)
-                    } else {
-                        setComputerScore(100)
-                    }
-                }
-                else {
-                    setPlayerScore(playerScore - point)
-                }
-            }
-            else if (player === "tas") {
-                setWho("player")
-                if (point === 13) {
-                    if (playerScore <= 90) {
-                        setPlayerScore(playerScore + 10)
-                    } else {
-                        setPlayerScore(100)
-                    }
-
-                } else {
-                    setComputerScore(computerScore - point)
-                }
-            }
-            else {
-                setWho("scoreless")
-            }
-        }
-
-
-    }, [click]);
-
+    const [who, setWho] = useState("");
 
     return (
         <div >
             {
                 (computerScore <= 0 || playerScore <= 0) ?
-                    <div>
-                        <div className='point-bar'>
-                            <h1 style={{ color: "white" }}>COMPUTER: {computerScore < 0 ? 0 : computerScore}</h1>
-                            <h1 style={{ color: "white" }}>PLAYER: {playerScore < 0 ? 0 : playerScore}</h1>
-                        </div>
+                    <div className="game-two-finish">
+                        <ScoreboardTwo
+                            click={click}
+                            player={player}
+                            computer={computer}
+                            playerScore={playerScore}
+                            computerScore={computerScore}
+                            setPlayerScore={setPlayerScore}
+                            setComputerScore={setComputerScore}
+                            point={point}
+                            setWho={setWho}
+                        />
                         <FinishTwo winner={computerScore <= 0 ? "Player" : "Computer"} />
-
                     </div>
                     : <div className='game-two'>
-                        <div className='point-bar'>
-                            <h1 style={{ color: "white" }}>COMPUTER: {computerScore}</h1>
-                            <h1 style={{ color: "white" }}>PLAYER: {playerScore}</h1>
-                        </div>
+                        <ScoreboardTwo
+                            click={click}
+                            player={player}
+                            computer={computer}
+                            playerScore={playerScore}
+                            computerScore={computerScore}
+                            setPlayerScore={setPlayerScore}
+                            setComputerScore={setComputerScore}
+                            point={point}
+                            setWho={setWho}
+                        />
                         <div className='game-two-main'>
                             <div>
                                 <img className={who === "computer" ? "game-two-img-ok" : "game-two-img"} src={selectComputer} alt="" />
@@ -142,14 +57,14 @@ function GameTwo() {
                                 {(who === "scoreless")
                                     ? (computerScore !== 100
                                         ? <div>
-                                            <h1 style={{ color: "white" }}>DRAW!</h1>
+                                            <h2 style={{ color: "white" }}>DRAW!</h2>
                                         </div>
                                         : <div></div>)
                                     : (point === 8
-                                        ? (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"}>{point} <span>LOW DAMAGE!</span></h1>)
+                                        ? (<h2 className={who === "computer" ? "game-two-computer" : "game-two-player"}>{point} <span>LOW DAMAGE!</span></h2>)
                                         : (point === 12
-                                            ? (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point} <span>HIGH DAMAGE!</span></h1>)
-                                            : (<h1 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point}</h1>)))}
+                                            ? (<h2 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point} <span>HIGH DAMAGE!</span></h2>)
+                                            : (<h2 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point}</h2>)))}
                             </div>
                             <div>
                                 <img className={who === "player" ? "game-two-img-ok" : "game-two-img"} src={selectPlayer} alt="" />
@@ -158,7 +73,7 @@ function GameTwo() {
 
                         {/* oyun ekranı */}
                         <div className='game-two-moves'>
-                            <div className='selection-box' onClick={() => {
+                            <div className='selection-box-two' onClick={() => {
                                 setSelectPlayer(tas);
                                 setPlayer("tas");
                                 setSelectComputer(rnd(setComputer))
@@ -168,7 +83,7 @@ function GameTwo() {
                             >
                                 <img className='obj img' src={tas} alt="" />
                             </div>
-                            <div className='selection-box' onClick={() => {
+                            <div className='selection-box-two' onClick={() => {
                                 setSelectPlayer(kagit);
                                 setPlayer("kagit");
                                 setSelectComputer(rnd(setComputer))
@@ -177,7 +92,7 @@ function GameTwo() {
                             }}>
                                 <img className='obj img' src={kagit} alt="" />
                             </div>
-                            <div className='selection-box' onClick={() => {
+                            <div className='selection-box-two' onClick={() => {
                                 setSelectPlayer(makas);
                                 setPlayer("makas");
                                 setSelectComputer(rnd(setComputer))

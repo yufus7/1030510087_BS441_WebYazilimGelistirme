@@ -13,10 +13,10 @@ function FinishOne(props) {
             <h1 style={{ color: "white" }}><span style={{ color: "var(--yellow)" }}> {props.winner} </span>Kazandı</h1>
 
             <div className='finish-button'>
-                    <button className="mb-one" onClick={() => navigate(0)}>
-                        Restart
-                    </button>
-  
+                <button className="mb-one" onClick={() => navigate(0)}>
+                    Restart
+                </button>
+
                 <Link to="/mode-two">
                     <button className="mb-two">Mode Two</button>
                 </Link>

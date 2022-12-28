@@ -1,4 +1,4 @@
-.game-one{
+.game-one {
     display: flex;
     width: 97vw;
     gap: 2rem;
@@ -6,7 +6,7 @@
     flex-direction: column;
 }
 
-.game-one-main{
+.game-one-main {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -14,18 +14,14 @@
     gap: 350px;
 }
 
-.game-one-finish{
+.game-one-finish {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 97vw;
 }
 
-.scoreboard{
-    width: 100%;
-}
-
-.game-one-moves{
+.game-one-moves {
     display: flex;
     width: 100%;
     height: 160px;
@@ -34,25 +30,25 @@
     justify-content: center;
 }
 
-.selection-box{
-    background: var(--yellow);
+.selection-box-one {
+    background: var(--green);
     border-radius: 50%;
     border: 0.15rem solid black;
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     transition: 0.3s;
 }
 
-.selection-box:hover{
-    background: var(--green);
+.selection-box-one:hover {
+    background: white;
     transform: translateY(5px);
 }
 
-.obj{
+.obj {
     height: 100%;
     width: 100%;
 }
 
-.img{
+.img {
     object-fit: contain;
 }

@@ -22,32 +22,28 @@ function ModeOne() {
         <div>
             {computerScore === 3 || playerScore === 3 ? (
                 <div className="game-one-finish">
-                    <div className="scoreboard">
-                        <Scoreboard
-                            click={click}
-                            player={player}
-                            computer={computer}
-                            playerScore={playerScore}
-                            computerScore={computerScore}
-                            setPlayerScore={setPlayerScore}
-                            setComputerScore={setComputerScore}
-                        />
-                    </div>
+                    <Scoreboard
+                        click={click}
+                        player={player}
+                        computer={computer}
+                        playerScore={playerScore}
+                        computerScore={computerScore}
+                        setPlayerScore={setPlayerScore}
+                        setComputerScore={setComputerScore}
+                    />
                     <FinishOne winner={computerScore === 3 ? "Computer" : "Player"} />
                 </div>
             ) : (
                 <div className="game-one">
-                    <div className="scoreboard">
-                        <Scoreboard
-                            click={click}
-                            player={player}
-                            computer={computer}
-                            playerScore={playerScore}
-                            computerScore={computerScore}
-                            setPlayerScore={setPlayerScore}
-                            setComputerScore={setComputerScore}
-                        />
-                    </div>
+                    <Scoreboard
+                        click={click}
+                        player={player}
+                        computer={computer}
+                        playerScore={playerScore}
+                        computerScore={computerScore}
+                        setPlayerScore={setPlayerScore}
+                        setComputerScore={setComputerScore}
+                    />
                     <div className="game-one-main">
                         <div className="computer">
                             <img style={{ width: "300px" }} src={random} alt="computer" />
@@ -58,7 +54,7 @@ function ModeOne() {
                     </div>
                     <div className="game-one-moves">
                         <div
-                            className="selection-box"
+                            className="selection-box-one"
                             onClick={() => {
                                 setSelect(tas);
                                 setPlayer("tas");
@@ -69,7 +65,7 @@ function ModeOne() {
                             <img className="obj img" src={tas} alt="" />
                         </div>
                         <div
-                            className="selection-box"
+                            className="selection-box-one"
                             onClick={() => {
                                 setSelect(kagit);
                                 setPlayer("kagit");
@@ -80,7 +76,7 @@ function ModeOne() {
                             <img className="obj img" src={kagit} alt="" />
                         </div>
                         <div
-                            className="selection-box"
+                            className="selection-box-one"
                             onClick={() => {
                                 setSelect(makas);
                                 setPlayer("makas");

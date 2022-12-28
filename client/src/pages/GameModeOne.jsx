@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar/Navbar';
 function GameModeOne() {
     return (
         <div className="glass">
-            <Navbar/>
+            <Navbar />
             <GameOne />
         </div>
     )

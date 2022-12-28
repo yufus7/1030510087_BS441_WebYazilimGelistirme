@@ -6,8 +6,8 @@ import Navbar from '../components/Navbar/Navbar';
 function GameModeTwo() {
     return (
         <div className="glass">
-            <Navbar/>
-            <GameTwo/>
+            <Navbar />
+            <GameTwo />
         </div>
     )
 }

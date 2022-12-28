@@ -15,7 +15,6 @@ function MainScreen() {
                         Mode One
                     </button>
                 </Link>
-
                 <Link to="/mode-two">
                     <button className="mb-two">Mode Two</button>
                 </Link>

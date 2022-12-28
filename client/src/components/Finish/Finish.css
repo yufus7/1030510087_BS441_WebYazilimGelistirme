@@ -1,11 +1,11 @@
-.finish-main{
+.finish-main {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 97vw;
 }
 
-.finish-button{
+.finish-button {
     display: flex;
     gap: 1rem;
 }
