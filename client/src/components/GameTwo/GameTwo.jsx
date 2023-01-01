@@ -55,16 +55,16 @@ function GameTwo() {
                             </div>
                             <div className='game-two-fight'>
                                 {(who === "scoreless")
-                                    ? (computerScore !== 100
-                                        ? <div>
-                                            <h2 style={{ color: "white" }}>DRAW!</h2>
-                                        </div>
-                                        : <div></div>)
+                                    ? <div>
+                                        <h2 style={{ color: "white" }}>DRAW!</h2>
+                                    </div>
                                     : (point === 8
                                         ? (<h2 className={who === "computer" ? "game-two-computer" : "game-two-player"}>{point} <span>LOW DAMAGE!</span></h2>)
                                         : (point === 12
                                             ? (<h2 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point} <span>HIGH DAMAGE!</span></h2>)
-                                            : (<h2 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point}</h2>)))}
+                                            : (point === 13
+                                                ? (<h2 className={who === "computer" ? "game-two-computer" : "game-two-player"} >HEALING!</h2>)
+                                                : (<h2 className={who === "computer" ? "game-two-computer" : "game-two-player"} >{point}</h2>))))}
                             </div>
                             <div>
                                 <img className={who === "player" ? "game-two-img-ok" : "game-two-img"} src={selectPlayer} alt="" />
